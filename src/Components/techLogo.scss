@@ -1,0 +1,17 @@
+
+.techLogo {
+    width: 25px;
+    
+    margin: 5px;
+
+    &__img{
+        width: 100%;
+        object-fit: cover;
+        transition : width 0.3s;
+
+        &:hover{
+            width: 120%;
+
+        }
+    }
+}

@@ -1,0 +1,52 @@
+@use "../Styles/mixins";
+@use "../Styles/variables";
+
+.blog{
+    padding: 50px 70px 50px 70px;
+    background-color: variables.$bgColor;
+
+    &__title{
+        @include mixins.textStyle(40px, 600, white);
+        text-transform: uppercase;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+
+    &__descr{
+        @include mixins.text(20px, 400, #9d9a9a);
+        text-align: center;
+        padding: 0 0 30px 0;
+        
+    }
+    
+    &__cards{
+        display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: auto;
+
+    }
+    
+
+    @include mixins.mobile {
+        padding: 50px 10px 50px 10px;
+
+        &__cards{
+            justify-content: space-between;
+
+        }
+        
+    }
+
+    @include mixins.tablet {
+        padding: 50px 20px 50px 20px;
+
+        &__cards{
+            justify-content: space-between;
+
+        }
+        
+    }
+}

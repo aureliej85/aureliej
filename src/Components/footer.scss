@@ -1,0 +1,67 @@
+@use "../Styles/mixins";
+@use "../Styles/variables";
+
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  background-color: variables.$bgColor;
+  padding: 15px 15px 5px 15px;
+  align-items: center;
+
+  &__logo {
+    width: 100px;
+    height: 100px;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }}
+
+  &__menu ul {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: none;
+    list-style-type: none;
+    text-transform: uppercase;
+
+    li {
+      padding-right: 25px;
+
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+
+  &__right{
+    padding-right: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @include mixins.mobile{
+    display: flex;
+    flex-direction: column;
+    
+    &__right{
+      padding-right: 0;
+    }
+  }
+
+  @include mixins.tablet{
+    display: flex;
+    flex-direction: column;
+
+    &__right{
+      padding-right: 0;
+    }
+  }
+}

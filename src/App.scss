@@ -1,0 +1,10 @@
+@use "./Styles/mixins";
+@use "./Styles/variables";
+
+.app {
+  width: 100%;
+  background-color: variables.$bgColor;
+  
+}
+
+

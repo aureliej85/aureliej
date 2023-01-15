@@ -1,0 +1,40 @@
+@use "../Styles/mixins";
+@use "../Styles/variables";
+
+.portfolio {
+    padding: 50px 25px 50px 25px;
+    background-color: variables.$bgColorLighter;
+
+    &__title{
+        @include mixins.textStyle(40px, 600, white);
+        text-transform: uppercase;
+        text-align: center;
+        padding: 0 0 30px 0;
+    }
+
+    &__descr{
+        @include mixins.text(20px, 400, #9d9a9a);
+        text-align: center;
+        padding: 0px 0 30px 0;
+
+        span{
+            display: block;
+        }
+        
+    }
+
+    &__carousel{
+        max-width: 1400px;
+        margin: auto;
+    }
+    
+
+    @include mixins.mobile{
+        padding: 50px 7px 10px 7px;
+
+        &__descr{
+            padding: 0 20px 30px 20px;
+        }
+
+    }
+}

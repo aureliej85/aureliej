@@ -1,0 +1,71 @@
+@use "../Styles/mixins";
+@use "../Styles/variables";
+
+.servicesAndSkills {
+   
+    padding: 50px 0 50px 0;
+    background-color: variables.$bgColor;
+    margin: auto;
+
+    &__title{
+        @include mixins.textStyle(40px, 600, white);
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__descr{
+        @include mixins.text(20px, 400, #9d9a9a);
+        text-align: center;
+        padding: 20px 0 20px 0;
+        
+    }
+
+    &__content{
+        max-width: 1400px;
+        margin: auto;
+        display : flex;
+        flex-direction: row;
+
+    }
+    
+
+    @include mixins.mobile {
+
+        &__title{
+            padding: 0 20px 0 20px;
+        }
+
+        &__descr{
+            padding: 10px 20px 0 20px;
+        }
+
+
+        &__content{
+            display: flex;
+            flex-direction: column;
+
+        }   
+    }
+
+    @include mixins.tablet {
+        padding: 50px 20px 50px 20px;
+        &__content{
+            max-width: 750px;
+            display: flex;
+            flex-direction: column;
+           
+
+        }
+
+    }
+}
+
+.homeDiv{
+    position: relative;
+}
+
+.fab{
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+}

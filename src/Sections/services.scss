@@ -1,0 +1,68 @@
+@use "../Styles/mixins";
+@use "../Styles/variables";
+
+
+.services {
+    padding: 50px 70px 50px 70px;
+    display : flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: variables.$bgColor;
+
+    article {
+        width: 250px;
+        height: 250px;
+        border-radius: 10px;
+        text-align: left;
+        padding: 15px;
+        margin-bottom: 20px;
+
+        h3 {
+            @include mixins.text(25px, 600, black);
+            text-transform: uppercase;
+        }
+    }
+
+    &__frontend{
+        background-color: variables.$rouge;
+
+        &__head{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+        }
+    }
+
+    &__backend{
+        background-color: variables.$vert;
+    }
+
+    &__mobile {
+        background-color: variables.$bleuTurquoise;
+    }
+
+    &__cms {
+        background-color: variables.$jaune;
+    }
+
+    @include mixins.mobile{
+        padding: 50px 25px 50px 25px;
+
+        article {
+            width: 300px;
+            height: 200px;
+        }
+    }
+
+    @include mixins.tablet{
+        justify-content: space-around;
+        padding: 50px 25px 50px 25px;
+
+        article {
+            width: 220px;
+            height: 220px;
+        }
+    }
+}

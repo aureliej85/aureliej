@@ -1,0 +1,73 @@
+@use "../Styles/mixins";
+@use "../Styles/variables";
+
+.card {
+position: relative;
+  max-width: 250px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  overflow: hidden;
+ 
+
+
+  &__picFill {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition : width 0.3s ease-in-out;
+
+    &:hover{
+        width: 120%;
+    }
+  }
+
+  &__title {
+    position: relative;
+    bottom: 1px;
+    left: 1px;
+    z-index: 100;
+    @include mixins.text(18px, 500, white);
+  }
+
+  @include mixins.mobile {
+    max-width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+
+    &__picFill {
+        max-width: 150px;
+        height: 150px;
+    }
+
+    &__title {
+        display: none;
+    }
+
+    
+  }
+
+  @include mixins.tablet {
+    max-width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+
+    &__picFill {
+        max-width: 150px;
+        height: 150px;
+    }
+
+    &__title {
+        display: none;
+    }
+
+    
+  }
+
+}
+
+
+.linkCard {
+  text-decoration: none;
+  overflow: hidden;
+}

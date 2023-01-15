@@ -1,0 +1,114 @@
+@use "../Styles/mixins";
+@use "../Styles/variables";
+
+.testimonials {
+    padding: 50px 70px 50px 70px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: auto;
+    
+    &__bloc {
+        background-color: variables.$bleuTurquoise;
+        padding: 50px 0 30px 0;
+
+        &__title{
+            @include mixins.textStyle(40px, 600, white);
+        text-transform: uppercase;
+        text-align: center;
+        }
+
+        &__descr{
+            @include mixins.text(20px, 400, variables.$bgColor);
+            text-align: center;
+            padding: 20px 0 20px 0;
+
+            a{
+                text-decoration: none;
+                color: white;
+            }
+
+            @include mixins.mobile{
+                padding: 10px 20px 0 20px;
+            }
+
+            @include mixins.tablet{
+                padding: 10px 25px 0 25px;
+            }
+            
+        }
+    }
+    
+    &__googleImg {
+        width : 150px;
+    }
+
+    &__citation {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        border : 1px grey solid;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 0 5px 25px 5px;
+        background-color: white;
+        box-shadow: 4px 1px 1px rgba(24, 24, 24, 0.922);
+        transition : transform 0.3s, box-shadow 0.3s;
+
+        &:hover{
+            box-shadow: 10px 5px 5px rgb(32, 32, 32);
+            transform: translate(0, -20px);
+
+        }
+        
+
+        &__header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            span {
+                margin-left: 15px;
+            }
+            
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+
+            &__stars{
+                width: 90px;
+            }
+        }
+    }
+
+    @include mixins.mobile{
+        padding: 50px 25px 50px 25px;
+        display: flex;
+        flex-direction: column;
+
+    
+
+        &__citation {
+        width: 90%;
+        }
+
+    }
+
+    @include mixins.tablet{
+        padding: 50px 25px 50px 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    
+
+        &__citation {
+        width: 40%;
+        }
+
+    }
+}
